@@ -1,0 +1,569 @@
+Items: {
+	LargePick1dev: {
+		DisplayName: Automatic Auto-Mattock V1
+		Tooltip: ""
+	}
+
+	LargePick11: {
+		DisplayName: Automatic Auto-Mattock V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargePick12: {
+		DisplayName: Automatic Auto-Mattock V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargePick13: {
+		DisplayName: Automatic Auto-Mattock V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargePick21: {
+		DisplayName: Automatic Auto-Mattock V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargePick22: {
+		DisplayName: Automatic Auto-Mattock V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargePick23: {
+		DisplayName: Automatic Auto-Mattock V2 (5x5)
+		Tooltip: ""
+	}
+
+	LargePick24: {
+		DisplayName: Automatic Auto-Mattock V2 (7x7)
+		Tooltip: ""
+	}
+
+	LargeHammer1dev: {
+		DisplayName: Another Auto-Hammer V1
+		Tooltip: ""
+	}
+
+	LargeHammer11: {
+		DisplayName: Another Auto-Hammer V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargeHammer12: {
+		DisplayName: Another Auto-Hammer V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargeHammer13: {
+		DisplayName: Another Auto-Hammer V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargeHammer21: {
+		DisplayName: Another Auto-Hammer V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargeHammer22: {
+		DisplayName: Another Auto-Hammer V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargeHammer23: {
+		DisplayName: Another Auto-Hammer V2 (5x5)
+		Tooltip: ""
+	}
+
+	LargeHammer24: {
+		DisplayName: Another Auto-Hammer V2 (7x7)
+		Tooltip: ""
+	}
+
+	SlopeTool11: {
+		DisplayName: Tile Pounder (1x1)
+		Tooltip: ""
+	}
+
+	SlopeTool12: {
+		DisplayName: Tile Pounder (3x3)
+		Tooltip: ""
+	}
+
+	SlopeTool13: {
+		DisplayName: Tile Pounder (5x5)
+		Tooltip: ""
+	}
+
+	SlopeTool14: {
+		DisplayName: Tile Pounder (7x7)
+		Tooltip: ""
+	}
+
+	LargeHoneySponge1: {
+		DisplayName: XL Honey Absorbant Sponge (1x1)
+		Tooltip: ""
+	}
+
+	LargeHoneySponge2: {
+		DisplayName: XL Honey Absorbant Sponge (3x3)
+		Tooltip: ""
+	}
+
+	LargeHoneySponge3: {
+		DisplayName: XL Honey Absorbant Sponge (5x5)
+		Tooltip: ""
+	}
+
+	LargeLavaSponge1: {
+		DisplayName: XL Lava Absorbant Sponge (1x1)
+		Tooltip: ""
+	}
+
+	LargeLavaSponge2: {
+		DisplayName: XL Lava Absorbant Sponge (3x3)
+		Tooltip: ""
+	}
+
+	LargeLavaSponge3: {
+		DisplayName: XL Lava Absorbant Sponge (5x5)
+		Tooltip: ""
+	}
+
+	LargeOmniSponge1: {
+		DisplayName: XL Ultra Absorbant Sponge (1x1)
+		Tooltip: ""
+	}
+
+	LargeOmniSponge2: {
+		DisplayName: XL Ultra Absorbant Sponge (3x3)
+		Tooltip: ""
+	}
+
+	LargeOmniSponge3: {
+		DisplayName: XL Ultra Absorbant Sponge (5x5)
+		Tooltip: ""
+	}
+
+	LargeWaterSponge1: {
+		DisplayName: XL Super Absorbant Sponge (1x1)
+		Tooltip: ""
+	}
+
+	LargeWaterSponge2: {
+		DisplayName: XL Super Absorbant Sponge (3x3)
+		Tooltip: ""
+	}
+
+	LargeWaterSponge3: {
+		DisplayName: XL Super Absorbant Sponge (5x5)
+		Tooltip: ""
+	}
+
+	LargeActuationRod11: {
+		DisplayName: Improved Actuation Rod (1x1)
+		Tooltip: ""
+	}
+
+	LargeActuationRod12: {
+		DisplayName: Improved Actuation Rod (3x3)
+		Tooltip: ""
+	}
+
+	LargeActuationRod13: {
+		DisplayName: Improved Actuation Rod (5x5)
+		Tooltip: ""
+	}
+
+	LargeActuationRod14: {
+		DisplayName: Improved Actuation Rod (7x7)
+		Tooltip: ""
+	}
+
+	LargeActuationRod1Alt: {
+		DisplayName: Improved Actuation Rod (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessHoneyBucket1: {
+		DisplayName: XL Bottomless Honey Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessHoneyBucket2: {
+		DisplayName: XL Bottomless Honey Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessHoneyBucket3: {
+		DisplayName: XL Bottomless Honey Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessLavaBucket1: {
+		DisplayName: XL Bottomless Lava Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessLavaBucket2: {
+		DisplayName: XL Bottomless Lava Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessLavaBucket3: {
+		DisplayName: XL Bottomless Lava Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessShimmerBucket1: {
+		DisplayName: XL Bottomless Shimmer Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessShimmerBucket2: {
+		DisplayName: XL Bottomless Shimmer Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessShimmerBucket3: {
+		DisplayName: XL Bottomless Shimmer Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessWaterBucket1: {
+		DisplayName: XL Bottomless Water Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessWaterBucket2: {
+		DisplayName: XL Bottomless Water Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessWaterBucket3: {
+		DisplayName: XL Bottomless Water Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniBucket1: {
+		DisplayName: XL Bottomless Omni-Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniBucket2: {
+		DisplayName: XL Bottomless Omni-Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniBucket3: {
+		DisplayName: XL Bottomless Omni-Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniHoneyBucket1: {
+		DisplayName: XL Bottomless Omni-Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniHoneyBucket2: {
+		DisplayName: XL Bottomless Omni-Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniHoneyBucket3: {
+		DisplayName: XL Bottomless Omni-Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniLavaBucket1: {
+		DisplayName: XL Bottomless Omni-Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniLavaBucket2: {
+		DisplayName: XL Bottomless Omni-Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniLavaBucket3: {
+		DisplayName: XL Bottomless Omni-Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniShimmerBucket1: {
+		DisplayName: XL Bottomless Omni-Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniShimmerBucket2: {
+		DisplayName: XL Bottomless Omni-Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniShimmerBucket3: {
+		DisplayName: XL Bottomless Omni-Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniWaterBucket1: {
+		DisplayName: XL Bottomless Omni-Bucket (1x1)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniWaterBucket2: {
+		DisplayName: XL Bottomless Omni-Bucket (3x3)
+		Tooltip: ""
+	}
+
+	LargeBottomlessOmniWaterBucket3: {
+		DisplayName: XL Bottomless Omni-Bucket (5x5)
+		Tooltip: ""
+	}
+
+	LargeWall11: {
+		DisplayName: Wall FAA-bricator V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargeWall12: {
+		DisplayName: Wall FAA-bricator V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargeWall13: {
+		DisplayName: Wall FAA-bricator V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargeTile11: {
+		DisplayName: Tile FAA-bricator V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargeTile12: {
+		DisplayName: Tile FAA-bricator V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargeTile13: {
+		DisplayName: Tile FAA-bricator V1 (5x5)
+		Tooltip: ""
+	}
+
+	ArenaBuilder1: {
+		DisplayName: The Proper Design (Left)
+		Tooltip: ""
+	}
+
+	ArenaBuilder2: {
+		DisplayName: The Proper Design (Center)
+		Tooltip: ""
+	}
+
+	ArenaBuilder3: {
+		DisplayName: The Proper Design (Right)
+		Tooltip: ""
+	}
+
+	LargeBottomlessHoneyBucketDev: {
+		DisplayName: XL Bottomless Honey Bucket
+		Tooltip: ""
+	}
+
+	LargeBottomlessLavaBucketDev: {
+		DisplayName: XL Bottomless Lava Bucket
+		Tooltip: ""
+	}
+
+	LargeBottomlessShimmerBucketDev: {
+		DisplayName: XL Bottomless Shimmer Bucket
+		Tooltip: ""
+	}
+
+	LargeBottomlessWaterBucketDev: {
+		DisplayName: XL Bottomless Water Bucket
+		Tooltip: ""
+	}
+
+	LargePick1Dev: {
+		DisplayName: Automatic Auto-Mattock V1
+		Tooltip: ""
+	}
+
+	LargeHammer1Dev: {
+		DisplayName: Another Auto-Hammer V1
+		Tooltip: ""
+	}
+
+	LargeWaterSpongeDev: {
+		DisplayName: XL Water Absorbant Sponge
+		Tooltip: ""
+	}
+
+	LargeHoneySpongeDev: {
+		DisplayName: XL Honey Absorbant Sponge
+		Tooltip: ""
+	}
+
+	LargeLavaSpongeDev: {
+		DisplayName: XL Lava Absorbant Sponge
+		Tooltip: ""
+	}
+
+	LargeTile1Dev: {
+		DisplayName: Tile FAA-bricator
+		Tooltip: ""
+	}
+
+	LargeTile21: {
+		DisplayName: Tile FAA-bricator V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargeTile22: {
+		DisplayName: Tile FAA-bricator V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargeTile23: {
+		DisplayName: Tile FAA-bricator V2 (5x5)
+		Tooltip: ""
+	}
+
+	LargeWall1Dev: {
+		DisplayName: Wall FAA-bricator V1
+		Tooltip: ""
+	}
+
+	LargeWall21: {
+		DisplayName: Wall FAA-bricator V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargeWall22: {
+		DisplayName: Wall FAA-bricator V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargeWall23: {
+		DisplayName: Wall FAA-bricator V2 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintScraper1Dev: {
+		DisplayName: Swiss Army Scraper V1
+		Tooltip: ""
+	}
+
+	LargePaintScraper11: {
+		DisplayName: Swiss Army Scraper V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintScraper12: {
+		DisplayName: Swiss Army Scraper V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintScraper13: {
+		DisplayName: Swiss Army Scraper V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintScraper21: {
+		DisplayName: Swiss Army Scraper V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintScraper22: {
+		DisplayName: Swiss Army Scraper V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintScraper23: {
+		DisplayName: Swiss Army Scraper V2 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintBrush1Dev: {
+		DisplayName: Swiss Army Brush V1
+		Tooltip: ""
+	}
+
+	LargePaintBrush11: {
+		DisplayName: Swiss Army Brush V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintBrush12: {
+		DisplayName: Swiss Army Brush V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintBrush13: {
+		DisplayName: Swiss Army Brush V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintBrush21: {
+		DisplayName: Swiss Army Brush V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintBrush22: {
+		DisplayName: Swiss Army Brush V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintBrush23: {
+		DisplayName: Swiss Army Brush V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintRoller1Dev: {
+		DisplayName: Swiss Army Roller V1
+		Tooltip: ""
+	}
+
+	LargePaintRoller11: {
+		DisplayName: Swiss Army Roller V1 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintRoller12: {
+		DisplayName: Swiss Army Roller V1 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintRoller13: {
+		DisplayName: Swiss Army Roller V1 (5x5)
+		Tooltip: ""
+	}
+
+	LargePaintRoller21: {
+		DisplayName: Swiss Army Roller V2 (1x1)
+		Tooltip: ""
+	}
+
+	LargePaintRoller22: {
+		DisplayName: Swiss Army Roller V2 (3x3)
+		Tooltip: ""
+	}
+
+	LargePaintRoller23: {
+		DisplayName: Swiss Army Roller V2 (5x5)
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	LargeHammerPreviewProj.DisplayName: Large Hammer Preview Proj
+	LargePickPreviewProj.DisplayName: Large Pick Preview Proj
+	SlopeToolPreviewProj.DisplayName: Slope Tool Preview Proj
+	LargeActuationRodPreviewProj.DisplayName: Large Actuation Rod Preview Proj
+	LargeGridPreviewProj.DisplayName: Large Grid Preview Proj
+	LargeWallPreviewProj.DisplayName: Large Wall Preview Proj
+	LargeTilePreviewProj.DisplayName: Large Tile Preview Proj
+	ArenaBuilderPreviewProj.DisplayName: Arena Builder Preview Proj
+}
+
+Conditions.FiveAnglerQuests: Mods.FoopaArenaArsenal.Conditions.FiveAnglerQuests

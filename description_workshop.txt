@@ -1,0 +1,42 @@
+[h1]FOOPA's Arenas and Arsenal[/h1]
+[b]Created by FOOPA_luvr[/b]
+
+Many utility mods add tools to accelerate mining, building, and arena setup, but few do so with vanilla progression and balance in mind. 
+
+[b]FOOPA's Arenas and Arsenal[/b] introduces a Rubblemaker-inspired suite of tools designed to remove tedious building grind while staying firmly rooted in vanilla-esque pacing.
+
+[h2]How to Obtain (Goblin Tinkerer)[/h2]
+All base tools are purchased directly from the [b]Goblin Tinkerer[/b], unlocking naturally alongside your game progression:
+
+[list]
+[*] [b]Always Available:[/b] Automatic Auto-Mattock V1, Another Auto-Hammer V1, Swiss Army Brush V1, Tile FAA-bricator V1, Wall FAA-bricator V1, Tile Pounder, The Proper Design.
+[*] [b]Defeat Skeletron:[/b] Improved Actuation Rod.
+[*] [b]5 Angler Quests:[/b] XL Bottomless Water Bucket & XL Super Absorbent Sponge.
+[*] [b]Defeat Queen Bee:[/b] XL Bottomless Honey Bucket & XL Honey Absorbent Sponge.
+[*] [b]Hardmode:[/b] XL Bottomless Lava Bucket & XL Lava Absorbent Sponge.
+[*] [b]Defeat Moon Lord:[/b] XL Bottomless Shimmer Bucket.
+[*] [i]V2 upgrades, Omni-Buckets, and Ultra Sponges are crafted as you advance through the game.[/i]
+[/list]
+
+[h2]Arsenal & Equipment[/h2]
+
+[list]
+[*] [b]Automatic Auto-Mattock (V1 & V2):[/b] Multi-tile pickaxes with customizable brush sweeps: V1 scales from 1x1 to 5x5, while V2 reaches 7x7. Tool speed automatically balances with sweep size, while pickaxe power matches the strongest pickaxe in your Inventory, Piggy Bank, or Safe. Bypasses evil stone to simplify underground arena prep on FTW seeds.
+[*] [b]Another Auto-Hammer (V1 & V2):[/b] Wall-clearing hammers (V1 up to 5x5, V2 up to 7x7) that scale with your best owned hammer. Preserves 1x1 altar, heart, and orb breaking.
+[*] [b]Tile Pounder:[/b] Dedicated sloping and shaping across 1x1 to 7x7 areas. Includes natural terrain-matching presets.
+[*] [b]FAA-bricator Placers (Tile & Wall):[/b] Mass-place tiles and background walls in 1x1, 3x3, and 5x5 grids. Fully respects Block Swap and auto-paint.
+[*] [b]Swiss Army Painting Suite:[/b] Dedicated Brush, Roller, and Scraper variants (V1 & V2) with 1x1, 3x3, and 5x5 brush sizes.
+[*] [b]XL Buckets & Sponges:[/b] 1x1 to 5x5 liquid pouring and drainage for Water, Lava, Honey, and Shimmer. Includes the [b]XL Bottomless Omni-Bucket[/b] (all 4 liquids combined) and the [b]XL Ultra Absorbant Sponge[/b].
+[*] [b]Improved Actuation Rod:[/b] Actuate up to 7x7 areas using actuators, or toggle individual 1x1 tiles without consuming items.
+[*] [b]The Proper Design (Arena Builder):[/b] Directional arena builder (Left, Center, Right) that builds platforms and places buff stations straight from inventory. Fully compatible with infinite items like Fargo's Omni Station.
+[/list]
+
+[h2]Technical & Quality of Life[/h2]
+
+[list]
+[*] [b]Visual Previews:[/b] Custom visual preview projections for brushes, grids, and arena layouts.
+[*] [b]Multiplayer Friendly:[/b] Synchronized tile edits and state tracking for lag-free co-op play.
+[*] [b]Smart Cursor & World Safe:[/b] Compatible with Smart Cursor and respects tile/area protection systems.
+[/list]
+
+There are some tweaks I want to comeback and make, but the mod in its current state is good enough for its first relaase!

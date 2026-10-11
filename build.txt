@@ -1,0 +1,3 @@
+displayName = Foopa's Arenas and Arsenal (FAA!!!)
+author = FOOPA_luvr
+version = 1.0
