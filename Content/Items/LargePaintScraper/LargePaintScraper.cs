@@ -60,7 +60,10 @@ namespace FoopaArenaArsenal.Content.Items
         {
             if (player.whoAmI != Main.myPlayer)
                 return;
- 
+
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Item.type;
+
             int previewType = ModContent.ProjectileType<LargeGridPreviewProj>();
  
             if (player.ownedProjectileCounts[previewType] == 0)

@@ -57,7 +57,10 @@ namespace FoopaArenaArsenal.Content.Items
         {
             if (player.whoAmI != Main.myPlayer)
                 return;
- 
+
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Item.type;
+
             int previewType = ModContent.ProjectileType<LargeGridPreviewProj>();
  
             if (player.ownedProjectileCounts[previewType] == 0)
@@ -213,7 +216,7 @@ namespace FoopaArenaArsenal.Content.Items
                     if (!TileLoader.CanKillTile(x, y, tile.TileType, ref blockDamaged))
                         continue;
                     
-                    bool consumePaintCoating = Main.rand.NextFloat() < PaintCoatingConsumptionChance;
+                    bool consumePaintCoating = Main.rand.NextFloat() < (1f - PaintCoatingConsumptionChance);
                     if (coatingIndices.Count > 0)
                     {
                         foreach (int coatingIndex in coatingIndices)

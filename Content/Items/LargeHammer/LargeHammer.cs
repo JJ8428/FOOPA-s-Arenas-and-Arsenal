@@ -120,6 +120,9 @@ namespace FoopaArenaArsenal.Content.Items
             if (player.whoAmI != Main.myPlayer)
                 return;
 
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Item.type;
+
             int centerX = Player.tileTargetX;
             int centerY = Player.tileTargetY;
 

@@ -324,7 +324,7 @@ namespace FoopaArenaArsenal.Content.Items
                     anyTileModified = true;
                     favoritedWallQuantities[rolledIndex]--;
 
-                    bool consumePaintCoating = Main.rand.NextFloat() < PaintCoatingConsumptionChance;
+                    bool consumePaintCoating = Main.rand.NextFloat() < (1f - PaintCoatingConsumptionChance);
                     if (coatingIndices.Count > 0)
                     {
                         foreach (int coatingIndex in coatingIndices)

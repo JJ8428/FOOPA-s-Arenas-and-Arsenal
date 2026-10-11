@@ -403,7 +403,7 @@ namespace FoopaArenaArsenal.Content.Items
                     anyTileModified = true;
                     favoritedTileQuantities[rolledIndex]--;
 
-                    bool consumePaintCoating = Main.rand.NextFloat() < PaintCoatingConsumptionChance;
+                    bool consumePaintCoating = Main.rand.NextFloat() < (1f - PaintCoatingConsumptionChance);
                     if (coatingIndices.Count > 0)
                     {
                         foreach (int coatingIndex in coatingIndices)
@@ -1018,7 +1018,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 1, 25, 0);
 
         protected override int AnimationSpeedMultiplier => 5;
-        protected override float PaintCoatingConsumptionChance => .5f;
+        protected override float PaintCoatingConsumptionChance => 0f;
     }
 
     public class LargeTile21 : LargeTileBase

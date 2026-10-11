@@ -65,6 +65,9 @@ namespace FoopaArenaArsenal.Content.Items
             if (player.whoAmI != Main.myPlayer)
                 return;
 
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Item.type;
+
             int previewType = ModContent.ProjectileType<ArenaBuilderPreviewProj>();
 
             if (Main.mouseLeft && !player.mouseInterface && Main.mouseItem.IsAir)
