@@ -69,21 +69,21 @@ namespace FoopaArenaArsenal.Content.Items
 
             if (faaPlayer.BestPickItem != null)
             {
-                item.pick = Math.Max(55, faaPlayer.BestPickItem.pick);
+                item.pick = (Main.SmartCursorWanted ? Math.Max(55, faaPlayer.BestPickItem.pick) : 0);
                 EffectivePickPower = Math.Max(55, faaPlayer.BestPickItem.pick);
                 item.damage = faaPlayer.BestPickItem.damage;
                 item.knockBack = faaPlayer.BestPickItem.knockBack;
-                item.useAnimation = Math.Max(1, (int)(faaPlayer.BestPickItem.useTime * sweepPenalty * MathF.Pow(player.tileSpeed, 1f) * 1.25)); // (int)(faaPlayer.BestPickItem.useAnimation * player.pickSpeed);
-                item.useTime = item.useAnimation;
+                item.useAnimation = Math.Max(1, (int)(faaPlayer.BestPickItem.useTime * sweepPenalty * MathF.Pow(player.pickSpeed, 1f) * 1.25f)); // (int)(faaPlayer.BestPickItem.useAnimation * player.pickSpeed);
+                item.useTime = (int)(item.useAnimation * (Main.SmartCursorWanted ? 1f : player.pickSpeed));
             }
             else
             {
-                item.pick = 55;
+                item.pick = (Main.SmartCursorWanted ? 55 : 0);
                 EffectivePickPower = 55;
                 item.damage = 8;
                 item.knockBack = 3f;
-                item.useAnimation = Math.Max(1, (int)(11 * sweepPenalty * MathF.Pow(player.tileSpeed, 1f) * 1.25)); // (int)(19 * player.tileSpeed);
-                item.useTime = item.useAnimation;
+                item.useAnimation = Math.Max(1, (int)(11 * sweepPenalty * MathF.Pow(player.pickSpeed, 1f) * 1.25f)); // (int)(19 * player.tileSpeed);
+                item.useTime = (int)(item.useAnimation * (Main.SmartCursorWanted ? 1f : player.pickSpeed));
             }
         }
 
@@ -91,6 +91,9 @@ namespace FoopaArenaArsenal.Content.Items
         {
             if (player.whoAmI != Main.myPlayer)
                 return;
+
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Item.type;
 
             if (SweepRadius != 0)
             {
@@ -352,7 +355,7 @@ namespace FoopaArenaArsenal.Content.Items
             var itemTooltip = new TooltipLine(
                 Mod,
                 "LargePickInfo",
-                // $"{EffectivePickPower}% pickaxe power\n" +
+                (!Main.SmartCursorWanted ? $"{EffectivePickPower}% pickaxe power\n" : "") +
                 $"+{Item.tileBoost} range" +
                 $"\n{evilTilesLine}" +
                 "\nTraits scale with the strongest pickaxe in your inventory, piggy bank, and safe" +
