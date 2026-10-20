@@ -66,7 +66,7 @@ namespace FoopaArenaArsenal.Content.Items
         public void ApplyDynamicStats(Item item, Player player)
         {
             var faaPlayer = player.GetModPlayer<FAAPlayer>();
-            float sweepPenalty = MathF.Pow(1f + (Penalty * SweepRadius + 1), 1.5f);
+            float sweepPenalty = MathF.Pow(1f + (Penalty * SweepRadius + 1), 1f);
 
             if (faaPlayer.BestHammerItem != null)
             {
@@ -74,8 +74,8 @@ namespace FoopaArenaArsenal.Content.Items
                 EffectiveHammerPower = Math.Max(55, faaPlayer.BestHammerItem.hammer);
                 item.damage = faaPlayer.BestHammerItem.damage;
                 item.knockBack = faaPlayer.BestHammerItem.knockBack;
-                item.useAnimation = Math.Max(1, (int)(faaPlayer.BestHammerItem.useTime * sweepPenalty * MathF.Pow(player.tileSpeed, 1f) * 1.5f));
-                item.useTime = item.useAnimation;
+                item.useTime = Math.Max(1, (int)(faaPlayer.BestHammerItem.useTime * sweepPenalty * MathF.Pow(player.tileSpeed, 1f) * .5f));
+                item.useAnimation = faaPlayer.BestHammerItem.useAnimation;
             }
             else
             {
@@ -83,8 +83,8 @@ namespace FoopaArenaArsenal.Content.Items
                 EffectiveHammerPower = 70;
                 item.damage = 24;
                 item.knockBack = 6f;
-                item.useAnimation = Math.Max(1, (int)(14 * sweepPenalty * MathF.Pow(player.tileSpeed, 1f)));
-                item.useTime = item.useAnimation;
+                item.useTime = Math.Max(1, (int)(14 * sweepPenalty * MathF.Pow(player.tileSpeed, .5f)));
+                item.useAnimation = 15;
             }
         }
 

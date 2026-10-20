@@ -65,7 +65,7 @@ namespace FoopaArenaArsenal.Content.Items
         public void ApplyDynamicStats(Item item, Player player)
         {
             var faaPlayer = player.GetModPlayer<FAAPlayer>();
-            float sweepPenalty = MathF.Pow(1f + (Penalty * (SweepRadius + 1)), 2f);
+            float sweepPenalty = MathF.Pow(1f + (Penalty * (SweepRadius + 1)), 1f);
 
             if (faaPlayer.BestPickItem != null)
             {
