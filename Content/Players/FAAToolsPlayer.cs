@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace FoopaArenaArsenal.Content.Players
 {
-    public class FAAPlayer : ModPlayer
+    public class FAAToolsPlayer : ModPlayer
     {
         public Item BestPickItem;
         public Item BestHammerItem;
@@ -41,7 +41,7 @@ namespace FoopaArenaArsenal.Content.Players
             Point targetTile = Player.HeldItem.ModItem switch
             {
                 // LargePickBase pick => pick.FindSmartCursorTarget(Player),
-                LargeHammerBase hammer => hammer.FindSmartCursorTarget(Player),
+                // LargeHammerBase hammer => hammer.FindSmartCursorTarget(Player),
                 LargeWallBase wall => wall.FindSmartCursorTarget(Player),
                 LargeActuationRodBase rod when !rod.AltVariant => rod.FindSmartCursorTarget(Player),
                 LargePaintBrushBase brush => brush.FindSmartCursorTarget(Player),

@@ -56,9 +56,10 @@ namespace FoopaArenaArsenal.Content.Items
 
         public void ApplyDynamicStats(Item item, Player player)
         {
-            float sweepPenalty = MathF.Pow(1f + (Penalty * SweepRadius), 2);
-            item.useTime = Math.Max(1, (int)Math.Round(ToolSpeed * sweepPenalty * MathF.Pow(player.wallSpeed, 1.5f)));
-            item.useAnimation =  (int)(10 * player.wallSpeed);
+            // float sweepPenalty = MathF.Pow(1f + (Penalty * SweepRadius), 2);
+            float sweepPenalty = 1f + (Penalty * (SweepRadius * 2.5f));
+            item.useTime = Math.Max(1, (int)Math.Round(ToolSpeed * sweepPenalty * MathF.Pow(player.wallSpeed, 1f)));
+            item.useAnimation = (int)(10 * player.wallSpeed * sweepPenalty);
         }
 
         public override void HoldItem(Player player)
@@ -148,7 +149,7 @@ namespace FoopaArenaArsenal.Content.Items
                 return false;
             }
 
-            if (player.GetModPlayer<FAAPlayer>().LargeWallDisableCooldown > 0)
+            if (player.GetModPlayer<FAAToolsPlayer>().LargeWallDisableCooldown > 0)
             {
                 Main.playerInventory = true;
 
@@ -202,6 +203,29 @@ namespace FoopaArenaArsenal.Content.Items
             );
         }
 
+        private bool HasEntryPoint(int centerX, int centerY)
+        {
+            int scanRadius = Sweep / 2;
+
+            for (int dx = -scanRadius; dx <= scanRadius; dx++)
+            {
+                for (int dy = -scanRadius; dy <= scanRadius; dy++)
+                {
+                    int x = centerX + dx;
+                    int y = centerY + dy;
+
+                    if (!WorldGen.InWorld(x, y))
+                        continue;
+
+                    ushort wall = Main.tile[x, y].WallType;
+                    if (wall == WallID.None || Main.wallHouse[wall])
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
         private (Dictionary<int, int>, Dictionary<int, int>, int, bool) AttemptPlacing(Player player, int centerX, int centerY, List<int> favoritedWallIndices, List<int> coatingIndices, int paintIndex)
         {
             int offset = Sweep / 2;
@@ -225,7 +249,7 @@ namespace FoopaArenaArsenal.Content.Items
                 }
             }
 
-            if (!supportExists)
+            if (!supportExists || !HasEntryPoint(centerX, centerY))
                 return (null, null, -1, false);
 
             bool anyTileModified = false;
@@ -302,13 +326,13 @@ namespace FoopaArenaArsenal.Content.Items
                     }
                     else
                     {
-                        var faaPlayer = player.GetModPlayer<FAAPlayer>();
-                        if (tile.WallType != WallID.None && faaPlayer.BestHammerItem != null)
+                        var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
+                        if (tile.WallType != WallID.None && FAAToolsPlayer.BestHammerItem != null)
                         {
                             for (int a = 0; a < 2; a++)
                             {
                                 if (tile.WallType != WallID.None)
-                                    player.PickWall(x, y, faaPlayer.BestHammerItem.hammer);
+                                    player.PickWall(x, y, FAAToolsPlayer.BestHammerItem.hammer);
                             }
 
                             if (tile.WallType != WallID.None)
@@ -464,9 +488,9 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override bool? UseItem(Player player)
         {
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
-            if (faaPlayer.LargeWallDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
+            if (FAAToolsPlayer.LargeWallDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
                 return true;
 
             int centerX = Player.tileTargetX;
@@ -479,7 +503,7 @@ namespace FoopaArenaArsenal.Content.Items
 
             if (favoritedWallIndices.Count == 0)
             {
-                faaPlayer.LargeWallDisableCooldown = 60;
+                FAAToolsPlayer.LargeWallDisableCooldown = 60;
                 Main.playerInventory = true;
                 player.itemAnimation = 0;
                 player.itemTime = 0;
@@ -487,7 +511,7 @@ namespace FoopaArenaArsenal.Content.Items
                 return true;
             }
 
-            if (faaPlayer.LargeWallPlaceWallsRequestPending)
+            if (FAAToolsPlayer.LargeWallPlaceWallsRequestPending)
                 return true;
 
             if (Main.netMode == NetmodeID.SinglePlayer)
@@ -501,7 +525,7 @@ namespace FoopaArenaArsenal.Content.Items
                         player.inventory[i].stack = updatedFavoritedWallIndicesQuantities[i];
                         if (updatedFavoritedWallIndicesQuantities[i] == 0)
                         {
-                            player.GetModPlayer<FAAPlayer>().LargeWallDisableCooldown = 60;
+                            player.GetModPlayer<FAAToolsPlayer>().LargeWallDisableCooldown = 60;
                             Main.playerInventory = true;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
@@ -512,7 +536,7 @@ namespace FoopaArenaArsenal.Content.Items
                         player.inventory[i].stack = updatedCoatingIndicesQuantities[i];
                         if (updatedCoatingIndicesQuantities[i] == 0)
                         {
-                            player.GetModPlayer<FAAPlayer>().LargeWallDisableCooldown = 60;
+                            player.GetModPlayer<FAAToolsPlayer>().LargeWallDisableCooldown = 60;
                             Main.playerInventory = true;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
@@ -523,7 +547,7 @@ namespace FoopaArenaArsenal.Content.Items
                         player.inventory[paintIndex].stack = updatedPaintQuantity;
                         if (updatedPaintQuantity == 0)
                         {
-                            player.GetModPlayer<FAAPlayer>().LargeWallDisableCooldown = 60;
+                            player.GetModPlayer<FAAToolsPlayer>().LargeWallDisableCooldown = 60;
                             Main.playerInventory = true;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
@@ -535,9 +559,9 @@ namespace FoopaArenaArsenal.Content.Items
             }
             else
             {
-                faaPlayer.LargeWallPlaceWallsRequestPending = true;
-                // faaPlayer.LargeWallPlaceWallsRequestCooldown = 5;
-                faaPlayer.LargeWallPlaceWallsRequestTimeout = 30;
+                FAAToolsPlayer.LargeWallPlaceWallsRequestPending = true;
+                // FAAToolsPlayer.LargeWallPlaceWallsRequestCooldown = 5;
+                FAAToolsPlayer.LargeWallPlaceWallsRequestTimeout = 30;
 
                 SendLargeWallPlaceWallsRequest(centerX, centerY, Item.type, favoritedWallIndices, coatingIndices, paintIndex);
             }
@@ -627,10 +651,10 @@ namespace FoopaArenaArsenal.Content.Items
             int paintIndex = reader.ReadInt32();
 
             Player player = Main.player[whoAmI];
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
             /*
-            if (faaPlayer.LargeWallPlaceWallsRequestCooldown > 0)
+            if (FAAToolsPlayer.LargeWallPlaceWallsRequestCooldown > 0)
             {
                 SendLargeWallPlaceWallsDeny(whoAmI);
                 return;
@@ -735,7 +759,7 @@ namespace FoopaArenaArsenal.Content.Items
 
                 if (disable)
                 {
-                    player.GetModPlayer<FAAPlayer>().LargeWallDisableCooldown = 60;
+                    player.GetModPlayer<FAAToolsPlayer>().LargeWallDisableCooldown = 60;
                     Main.playerInventory = true;
                 }
 
@@ -759,7 +783,7 @@ namespace FoopaArenaArsenal.Content.Items
                 NetMessage.SendTileSquare(-1, centerX, centerY, Sweep);
             }
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().LargeWallPlaceWallsRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().LargeWallPlaceWallsRequestPending = false;
         }
 
         public static void HandleLargeWallPlaceWallsDeny(BinaryReader reader, int whoAmI)
@@ -767,7 +791,7 @@ namespace FoopaArenaArsenal.Content.Items
             if (Main.netMode != NetmodeID.MultiplayerClient)
                 return;
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().LargeWallPlaceWallsRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().LargeWallPlaceWallsRequestPending = false;
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
@@ -889,6 +913,11 @@ namespace FoopaArenaArsenal.Content.Items
             }
 
             return targetTile;
+
+            // if (targetTile.X != -1 && targetTile.Y != -1)
+            //     return targetTile;
+            // else
+            //     return centerTile;
         }
     }
 

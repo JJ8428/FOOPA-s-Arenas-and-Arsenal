@@ -857,11 +857,11 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override bool? UseItem(Player player)
         {       
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
             holdFired = false;
 
-            if (faaPlayer.ArenaBuilderDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
+            if (FAAToolsPlayer.ArenaBuilderDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
                 return true;
 
             int centerX = HoldTileX != -1 ? HoldTileX : Player.tileTargetX;
@@ -875,7 +875,7 @@ namespace FoopaArenaArsenal.Content.Items
             if (favoritedTileIndex == -1 || player.inventory[favoritedTileIndex].stack < 170)
             {
                 Main.playerInventory = true;
-                player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                 player.itemAnimation = 0;
                 player.itemTime = 0;
                 return true;
@@ -893,7 +893,7 @@ namespace FoopaArenaArsenal.Content.Items
                         if (updatedFavoritedTileQuantity == 0)
                         {
                             Main.playerInventory = true;
-                            player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                            player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
                         }
@@ -904,7 +904,7 @@ namespace FoopaArenaArsenal.Content.Items
                         if (updatedGroundFurnitureIndicesQuantities[i] == 0)
                         {
                             Main.playerInventory = true;
-                            player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                            player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
                         }
@@ -915,7 +915,7 @@ namespace FoopaArenaArsenal.Content.Items
                         if (updatedHangingFurnitureIndicesQuantities[i] == 0)
                         {
                             Main.playerInventory = true;
-                            player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                            player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
                         }
@@ -926,7 +926,7 @@ namespace FoopaArenaArsenal.Content.Items
                         if (updatedCoatingIndicesQuantities[i] == 0)
                         {
                             Main.playerInventory = true;
-                            player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                            player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
                         }
@@ -937,7 +937,7 @@ namespace FoopaArenaArsenal.Content.Items
                         if (updatedPaintQuantity == 0)
                         {
                             Main.playerInventory = true;
-                            player.GetModPlayer<FAAPlayer>().ArenaBuilderDisableCooldown = 180;
+                            player.GetModPlayer<FAAToolsPlayer>().ArenaBuilderDisableCooldown = 180;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
                         }
@@ -948,9 +948,9 @@ namespace FoopaArenaArsenal.Content.Items
             }
             else
             {
-                faaPlayer.ArenaBuilderPlaceTilesRequestPending = true;
-                // faaPlayer.ArenaBuilderPlaceTilesRequestCooldown = 5; // ~ 1/12 second
-                faaPlayer.ArenaBuilderPlaceTilesRequestTimeout = 30; // ~ 1/2 second
+                FAAToolsPlayer.ArenaBuilderPlaceTilesRequestPending = true;
+                // FAAToolsPlayer.ArenaBuilderPlaceTilesRequestCooldown = 5; // ~ 1/12 second
+                FAAToolsPlayer.ArenaBuilderPlaceTilesRequestTimeout = 30; // ~ 1/2 second
 
                 SendArenaBuilderPlaceTilesRequest(centerX, centerY, Item.type, favoritedTileIndex, groundFurnitureIndices, hangingFurnitureIndices, coatingIndices, paintIndex);
             }
@@ -1071,10 +1071,10 @@ namespace FoopaArenaArsenal.Content.Items
             int paintIndex = reader.ReadInt32();
 
             Player player = Main.player[whoAmI];
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
             /*
-            if (faaPlayer.ArenaBuilderPlaceTilesRequestCooldown > 0)
+            if (FAAToolsPlayer.ArenaBuilderPlaceTilesRequestCooldown > 0)
             {
                 SendArenaBuilderPlaceTilesDeny(whoAmI);
                 return;
@@ -1214,7 +1214,7 @@ namespace FoopaArenaArsenal.Content.Items
                 NetMessage.SendTileSquare(-1, topLeftTileX - 1, topLeftTileY - 1, buildWidth + 2, buildHeight + 2);
             }
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().ArenaBuilderPlaceTilesRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().ArenaBuilderPlaceTilesRequestPending = false;
         }
 
         public static void HandleArenaBuilderPlaceTilesDeny(BinaryReader reader, int whoAmI)
@@ -1222,7 +1222,7 @@ namespace FoopaArenaArsenal.Content.Items
             if (Main.netMode != NetmodeID.MultiplayerClient)
                 return;
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().ArenaBuilderPlaceTilesRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().ArenaBuilderPlaceTilesRequestPending = false;
         }
 
         public override void NetSend(BinaryWriter writer)

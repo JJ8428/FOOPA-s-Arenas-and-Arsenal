@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -43,7 +44,7 @@ namespace FoopaArenaArsenal.Content.Items
             Item.useAnimation = 24;
             Item.useTime = 14;
             Item.knockBack = 6f;
-            // Item.hammer = 70;
+            Item.hammer = 1;
 
             Item.attackSpeedOnlyAffectsWeaponAnimation = true;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -65,26 +66,26 @@ namespace FoopaArenaArsenal.Content.Items
 
         public void ApplyDynamicStats(Item item, Player player)
         {
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
-            float sweepPenalty = MathF.Pow(1f + (Penalty * SweepRadius + 1), 1f);
+            var faaPlayer = player.GetModPlayer<FAAToolsPlayer>();
+            float sweepPenalty = 1f + (Penalty * (SweepRadius * 3f));
 
             if (faaPlayer.BestHammerItem != null)
             {
-                // item.hammer = Math.Max(55, faaPlayer.BestHammerItem.hammer);
+                item.hammer = Math.Max(55, faaPlayer.BestHammerItem.hammer);
                 EffectiveHammerPower = Math.Max(55, faaPlayer.BestHammerItem.hammer);
                 item.damage = faaPlayer.BestHammerItem.damage;
                 item.knockBack = faaPlayer.BestHammerItem.knockBack;
-                item.useTime = Math.Max(1, (int)(faaPlayer.BestHammerItem.useTime * sweepPenalty * MathF.Pow(player.tileSpeed, 1f) * .5f));
-                item.useAnimation = faaPlayer.BestHammerItem.useAnimation;
+                item.useTime = (int)(faaPlayer.BestHammerItem.useTime * sweepPenalty * .75f);
+                item.useAnimation = (int)(faaPlayer.BestHammerItem.useAnimation * sweepPenalty * .5f);
             }
             else
             {
-                // item.hammer = 70;
+                item.hammer = 70;
                 EffectiveHammerPower = 70;
                 item.damage = 24;
                 item.knockBack = 6f;
-                item.useTime = Math.Max(1, (int)(14 * sweepPenalty * MathF.Pow(player.tileSpeed, .5f)));
-                item.useAnimation = 15;
+                item.useTime = (int)(14 * sweepPenalty * .8f);
+                item.useAnimation = (int)(15 * sweepPenalty * .5f);
             }
         }
 
@@ -126,10 +127,10 @@ namespace FoopaArenaArsenal.Content.Items
             int centerX = Player.tileTargetX;
             int centerY = Player.tileTargetY;
 
-            // bool cursorOnSuppressedHiddenWall = IsHiddenWall(centerX, centerY);
+            bool cursorOnSuppressedHiddenWall = IsHiddenWall(centerX, centerY);
             // !KillHiddenWalls && IsHiddenWall(centerX, centerY);
 
-            // Item.hammer = cursorOnSuppressedHiddenWall ? 0 : EffectiveHammerPower;
+            Item.hammer = cursorOnSuppressedHiddenWall ? 0 : EffectiveHammerPower;
 
             if (SweepRadius != 0)
             {
@@ -273,6 +274,29 @@ namespace FoopaArenaArsenal.Content.Items
             }
         }
 
+        private bool HasEntryPoint(int centerX, int centerY)
+        {
+            int scanRadius = Sweep / 2;
+
+            for (int dx = -scanRadius; dx <= scanRadius; dx++)
+            {
+                for (int dy = -scanRadius; dy <= scanRadius; dy++)
+                {
+                    int x = centerX + dx;
+                    int y = centerY + dy;
+
+                    if (!WorldGen.InWorld(x, y))
+                        continue;
+
+                    ushort wall = Main.tile[x, y].WallType;
+                    if (wall == WallID.None || Main.wallHouse[wall])
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
         private bool isProcessingSweep = false;
 
         public void ExpandBreakFromCenter(Player player, int centerX, int centerY)
@@ -288,6 +312,9 @@ namespace FoopaArenaArsenal.Content.Items
             {
                 bool anyTileModified = false;
                 int offset = Sweep / 2;
+
+                if (!HasEntryPoint(centerX, centerY))
+                    return;
 
                 for (int dx = -offset; dx <= offset; dx++)
                 {
@@ -469,17 +496,22 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            var faaPlayer = Main.LocalPlayer.GetModPlayer<FAAPlayer>();
+            var faaPlayer = Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>();
             string bestHammerLine = faaPlayer.BestHammerItem != null
                 ? $"[c/64FF64:Matching:] {faaPlayer.BestHammerItem.Name} ([i:{faaPlayer.BestHammerItem.type}])"
                 : "[c/64FF64:Matching:] [c/FF6464:None - no hammer found in inventories]";
-            tooltips.RemoveAll(line => line.Mod == "Terraria" && line.Name == "TileBoost");
+
+            string materialsLine = ItemName[^2] == '1' ? "Materials" : "";
+
+            tooltips.RemoveAll(line => line.Mod == "Terraria" &&
+                (line.Name == "TileBoost" || line.Name == "Material" || line.Name == "HammerPower"));
 
             var itemTooltip = new TooltipLine(
                 Mod,
                 "LargeHammerInfo",
                 $"{EffectiveHammerPower}% hammer power\n" +
                 $"+{Item.tileBoost} range" +
+                $"{materialsLine}" +
                 "\nTraits scale with the strongest hammer in your inventory, piggy bank, and safe" +
                 $"\n{bestHammerLine}" +
                 "\nRight Click to toggle sweep size" // +
@@ -494,9 +526,43 @@ namespace FoopaArenaArsenal.Content.Items
                 tooltips.Add(itemTooltip);
         }
 
+        /*
+        private static List<Point> GetLinePoints(Point from, Point to)
+        {
+            List<Point> points = new List<Point>();
+            Utils.PlotLine(new Point16(from.X, from.Y), new Point16(to.X, to.Y), (x, y) =>
+            {
+                points.Add(new Point(x, y));
+                return true;
+            });
+            return points;
+        }
+
+        private bool HasClearWallPath(Point from, Point to) // Make STATIC
+        {
+            List<Point> points = GetLinePoints(from, to);
+
+            foreach (Point p in points)
+            {
+                if (p == from || p == to)
+                    continue;
+
+                if (!WorldGen.InWorld(p.X, p.Y))
+                    continue;
+
+                Tile tile = Main.tile[p.X, p.Y];
+
+                if (tile.WallType != WallID.None && !IsHiddenWall(p.X, p.Y) && Main.wallHouse[tile.WallType])
+                    return false;
+            }
+
+            return true;
+        }
+
         public Point FindSmartCursorTarget(Player player)
         {
             Point centerTile = Main.MouseWorld.ToTileCoordinates();
+            Point playerCenterTile = player.Center.ToTileCoordinates();
             Point targetTile = new Point(-1, -1);
             float minDist = -1;
 
@@ -513,7 +579,8 @@ namespace FoopaArenaArsenal.Content.Items
 
                     Tile tile = Main.tile[x, y];
 
-                    if (tile.WallType == WallID.None || IsHiddenWall(x, y))
+                    Point p = new Point(x, y);
+                    if (tile.WallType == WallID.None || IsHiddenWall(x, y) || !HasEntryPoint(x, y, 1) || !HasClearWallPath(playerCenterTile, p))
                         continue;
 
                     int dx = x - centerTile.X;
@@ -530,6 +597,7 @@ namespace FoopaArenaArsenal.Content.Items
 
             return targetTile;
         }
+        */
     }
 
     public class LargeHammer1Dev : LargeHammerBase

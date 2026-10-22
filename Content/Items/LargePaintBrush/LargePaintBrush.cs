@@ -338,9 +338,9 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override bool? UseItem(Player player)
         {
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
-            if (faaPlayer.LargePaintBrushDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
+            if (FAAToolsPlayer.LargePaintBrushDisableCooldown > 0 || !player.controlUseItem || player.whoAmI != Main.myPlayer || player.HasBuff(BuffID.NoBuilding) || player.noBuilding)
                 return true;
 
             int centerX = Player.tileTargetX;
@@ -353,7 +353,7 @@ namespace FoopaArenaArsenal.Content.Items
 
             if (coatingIndices.Count == 0 && paintIndex == -1)
             {
-                faaPlayer.LargePaintBrushDisableCooldown = 60;
+                FAAToolsPlayer.LargePaintBrushDisableCooldown = 60;
                 Main.playerInventory = true;
                 player.itemAnimation = 0;
                 player.itemTime = 0;
@@ -361,7 +361,7 @@ namespace FoopaArenaArsenal.Content.Items
                 return true;
             }
 
-            if (faaPlayer.LargePaintBrushPaintTilesRequestPending)
+            if (FAAToolsPlayer.LargePaintBrushPaintTilesRequestPending)
                 return true;
 
             if (Main.netMode == NetmodeID.SinglePlayer)
@@ -375,7 +375,7 @@ namespace FoopaArenaArsenal.Content.Items
                         player.inventory[i].stack = updatedCoatingIndicesQuantities[i];
                         if (updatedCoatingIndicesQuantities[i] == 0)
                         {
-                            player.GetModPlayer<FAAPlayer>().LargePaintBrushDisableCooldown = 60;
+                            player.GetModPlayer<FAAToolsPlayer>().LargePaintBrushDisableCooldown = 60;
                             Main.playerInventory = true;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
@@ -386,7 +386,7 @@ namespace FoopaArenaArsenal.Content.Items
                         player.inventory[paintIndex].stack = updatedPaintQuantity;
                         if (updatedPaintQuantity == 0)
                         {
-                            player.GetModPlayer<FAAPlayer>().LargePaintBrushDisableCooldown = 60;
+                            player.GetModPlayer<FAAToolsPlayer>().LargePaintBrushDisableCooldown = 60;
                             Main.playerInventory = true;
                             player.itemAnimation = 0;
                             player.itemTime = 0;
@@ -396,8 +396,8 @@ namespace FoopaArenaArsenal.Content.Items
             }
             else
             {
-                faaPlayer.LargePaintBrushPaintTilesRequestPending = true;
-                faaPlayer.LargePaintBrushPaintTilesRequestTimeout = 30;
+                FAAToolsPlayer.LargePaintBrushPaintTilesRequestPending = true;
+                FAAToolsPlayer.LargePaintBrushPaintTilesRequestTimeout = 30;
 
                 SendLargePaintBrushPaintTilesRequest(centerX, centerY, Item.type, coatingIndices, paintIndex);
             }
@@ -465,7 +465,7 @@ namespace FoopaArenaArsenal.Content.Items
             int paintIndex = reader.ReadInt32();
 
             Player player = Main.player[whoAmI];
-            var faaPlayer = player.GetModPlayer<FAAPlayer>();
+            var FAAToolsPlayer = player.GetModPlayer<FAAToolsPlayer>();
 
             Item heldItem = player.HeldItem;
             if (heldItem == null || heldItem.IsAir || heldItem.type != claimedItemType ||
@@ -538,14 +538,14 @@ namespace FoopaArenaArsenal.Content.Items
 
                 if (disable)
                 {
-                    player.GetModPlayer<FAAPlayer>().LargePaintBrushDisableCooldown = 60;
+                    player.GetModPlayer<FAAToolsPlayer>().LargePaintBrushDisableCooldown = 60;
                     Main.playerInventory = true;
                 }
 
                 // NetMessage.SendTileSquare(-1, centerX, centerY, Sweep);
             }
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().LargePaintBrushPaintTilesRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().LargePaintBrushPaintTilesRequestPending = false;
         }
 
         public static void HandleLargePaintBrushPaintTilesDeny(BinaryReader reader, int whoAmI)
@@ -553,7 +553,7 @@ namespace FoopaArenaArsenal.Content.Items
             if (Main.netMode != NetmodeID.MultiplayerClient)
                 return;
 
-            Main.LocalPlayer.GetModPlayer<FAAPlayer>().LargePaintBrushPaintTilesRequestPending = false;
+            Main.LocalPlayer.GetModPlayer<FAAToolsPlayer>().LargePaintBrushPaintTilesRequestPending = false;
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)

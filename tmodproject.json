@@ -1,4 +1,6 @@
 {
   "rootNamespace": "FoopaArenaArsenal",
-  "fileMap": {}
+  "fileMap": {
+    "Content\\Items\\LargeHammer\\LargeHammerListeners.cs": "FoopaArenaArsenal.Content.Items.LargeHammer"
+  }
 }

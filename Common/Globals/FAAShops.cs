@@ -16,7 +16,6 @@ namespace FoopaArenaArsenal.Common.Globals
             if (shop.NpcType != NPCID.GoblinTinkerer)
                 return;
 
-            // always available
             shop.Add<LargePick11>();
             shop.Add<LargeHammer11>();
             shop.Add<LargePaintBrush11>();
