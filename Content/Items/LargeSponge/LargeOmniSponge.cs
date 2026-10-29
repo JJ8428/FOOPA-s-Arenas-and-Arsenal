@@ -11,6 +11,16 @@ namespace FoopaArenaArsenal.Content.Items
     {
         protected override int LiquidType => 0;
 
+        protected virtual ModItem DecraftAs => null;
+
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
+        }
+
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI != Main.myPlayer)
@@ -126,6 +136,9 @@ namespace FoopaArenaArsenal.Content.Items
                 .AddRecipeGroup(FAARecipeSystem.LargeLavaSponge)
                 .AddRecipeGroup(FAARecipeSystem.LargeHoneySponge)
                 .AddTile(TileID.LunarCraftingStation)
+                .AddCustomShimmerResult(ModContent.ItemType<LargeWaterSponge1>())
+                .AddCustomShimmerResult(ModContent.ItemType<LargeLavaSponge1>())
+                .AddCustomShimmerResult(ModContent.ItemType<LargeHoneySponge1>())
                 .Register();
         }
     }
@@ -141,6 +154,9 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Yellow;
         protected override int Price => Item.sellPrice(0, 5, 0, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeOmniSponge1>();  
+
     }
 
     public class LargeOmniSponge3 : LargeOmniSpongeBase
@@ -154,5 +170,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Yellow;
         protected override int Price => Item.sellPrice(0, 5, 0, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeOmniSponge1>();  
     }
 }

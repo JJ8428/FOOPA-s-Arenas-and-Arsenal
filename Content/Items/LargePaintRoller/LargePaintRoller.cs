@@ -32,9 +32,14 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override string Texture => $"FoopaArenaArsenal/Content/Items/LargePaintRoller/{ItemName}";
 
+        protected virtual ModItem DecraftAs => null;
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
         }
 
         public override void SetDefaults()
@@ -836,6 +841,9 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float PaintCoatingConsumptionChance => .5f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintScraper22>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintRoller21>();  
+
     }
 
     public class LargePaintRoller23 : LargePaintRollerBase
@@ -852,5 +860,7 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float PaintCoatingConsumptionChance => .5f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintScraper23>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintRoller21>();
     }
 }

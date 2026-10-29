@@ -320,32 +320,32 @@ Items: {
 	}
 
 	LargeWall11: {
-		DisplayName: Wall FAA-bricator V1 (1x1)
+		DisplayName: Wall FAA-bricator (1x1)
 		Tooltip: ""
 	}
 
 	LargeWall12: {
-		DisplayName: Wall FAA-bricator V1 (3x3)
+		DisplayName: Wall FAA-bricator (3x3)
 		Tooltip: ""
 	}
 
 	LargeWall13: {
-		DisplayName: Wall FAA-bricator V1 (5x5)
+		DisplayName: Wall FAA-bricator (5x5)
 		Tooltip: ""
 	}
 
 	LargeTile11: {
-		DisplayName: Tile FAA-bricator V1 (1x1)
+		DisplayName: Tile FAA-bricator (1x1)
 		Tooltip: ""
 	}
 
 	LargeTile12: {
-		DisplayName: Tile FAA-bricator V1 (3x3)
+		DisplayName: Tile FAA-bricator (3x3)
 		Tooltip: ""
 	}
 
 	LargeTile13: {
-		DisplayName: Tile FAA-bricator V1 (5x5)
+		DisplayName: Tile FAA-bricator (5x5)
 		Tooltip: ""
 	}
 
@@ -409,148 +409,108 @@ Items: {
 		Tooltip: ""
 	}
 
-	LargeTile1Dev: {
-		DisplayName: Tile FAA-bricator
-		Tooltip: ""
-	}
-
-	LargeTile21: {
-		DisplayName: Tile FAA-bricator V2 (1x1)
-		Tooltip: ""
-	}
-
-	LargeTile22: {
-		DisplayName: Tile FAA-bricator V2 (3x3)
-		Tooltip: ""
-	}
-
-	LargeTile23: {
-		DisplayName: Tile FAA-bricator V2 (5x5)
-		Tooltip: ""
-	}
-
-	LargeWall1Dev: {
-		DisplayName: Wall FAA-bricator V1
-		Tooltip: ""
-	}
-
-	LargeWall21: {
-		DisplayName: Wall FAA-bricator V2 (1x1)
-		Tooltip: ""
-	}
-
-	LargeWall22: {
-		DisplayName: Wall FAA-bricator V2 (3x3)
-		Tooltip: ""
-	}
-
-	LargeWall23: {
-		DisplayName: Wall FAA-bricator V2 (5x5)
-		Tooltip: ""
-	}
-
 	LargePaintScraper1Dev: {
-		DisplayName: Swiss Army Scraper V1
+		DisplayName: Swiss Painter Scraper V1
 		Tooltip: ""
 	}
 
 	LargePaintScraper11: {
-		DisplayName: Swiss Army Scraper V1 (1x1)
+		DisplayName: Swiss Painter Scraper V1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintScraper12: {
-		DisplayName: Swiss Army Scraper V1 (3x3)
+		DisplayName: Swiss Painter Scraper V1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintScraper13: {
-		DisplayName: Swiss Army Scraper V1 (5x5)
+		DisplayName: Swiss Painter Scraper V1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintScraper21: {
-		DisplayName: Swiss Army Scraper V2 (1x1)
+		DisplayName: Swiss Painter Scraper V2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintScraper22: {
-		DisplayName: Swiss Army Scraper V2 (3x3)
+		DisplayName: Swiss Painter Scraper V2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintScraper23: {
-		DisplayName: Swiss Army Scraper V2 (5x5)
+		DisplayName: Swiss Painter Scraper V2 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintBrush1Dev: {
-		DisplayName: Swiss Army Brush V1
+		DisplayName: Swiss Painter Brush V1
 		Tooltip: ""
 	}
 
 	LargePaintBrush11: {
-		DisplayName: Swiss Army Brush V1 (1x1)
+		DisplayName: Swiss Painter Brush V1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintBrush12: {
-		DisplayName: Swiss Army Brush V1 (3x3)
+		DisplayName: Swiss Painter Brush V1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintBrush13: {
-		DisplayName: Swiss Army Brush V1 (5x5)
+		DisplayName: Swiss Painter Brush V1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintBrush21: {
-		DisplayName: Swiss Army Brush V1 (1x1)
+		DisplayName: Swiss Painter Brush V2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintBrush22: {
-		DisplayName: Swiss Army Brush V1 (3x3)
+		DisplayName: Swiss Painter Brush V2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintBrush23: {
-		DisplayName: Swiss Army Brush V1 (5x5)
+		DisplayName: Swiss Painter Brush V2 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintRoller1Dev: {
-		DisplayName: Swiss Army Roller V1
+		DisplayName: Swiss Painter Roller V1
 		Tooltip: ""
 	}
 
 	LargePaintRoller11: {
-		DisplayName: Swiss Army Roller V1 (1x1)
+		DisplayName: Swiss Painter Roller V1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintRoller12: {
-		DisplayName: Swiss Army Roller V1 (3x3)
+		DisplayName: Swiss Painter Roller V1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintRoller13: {
-		DisplayName: Swiss Army Roller V1 (5x5)
+		DisplayName: Swiss Painter Roller V1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintRoller21: {
-		DisplayName: Swiss Army Roller V2 (1x1)
+		DisplayName: Swiss Painter Roller V2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintRoller22: {
-		DisplayName: Swiss Army Roller V2 (3x3)
+		DisplayName: Swiss Painter Roller V2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintRoller23: {
-		DisplayName: Swiss Army Roller V2 (5x5)
+		DisplayName: Swiss Painter Roller V2 (5x5)
 		Tooltip: ""
 	}
 }

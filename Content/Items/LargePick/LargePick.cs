@@ -30,9 +30,14 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override string Texture => $"FoopaArenaArsenal/Content/Items/LargePick/{ItemName}";
 
+        protected virtual ModItem DecraftAs => null;
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
         }
 
         public override void SetDefaults()
@@ -358,7 +363,7 @@ namespace FoopaArenaArsenal.Content.Items
             var itemTooltip = new TooltipLine(
                 Mod,
                 "LargePickInfo",
-                $"{faaPlayer.BestPickItem.pick}% pickaxe power\n" +
+                $"{(faaPlayer.BestPickItem != null ? faaPlayer.BestPickItem.pick : 55)}% pickaxe power\n" +
                 $"+{Item.tileBoost} range" +
                 $"\n{materialsLine}" +
                 $"{evilTilesLine}" +
@@ -440,8 +445,10 @@ namespace FoopaArenaArsenal.Content.Items
         {
             CreateRecipe()
                 .AddRecipeGroup(FAARecipeSystem.LargePickTier1)
-                .AddIngredient(ItemID.ShroomiteBar, 5)
+                .AddIngredient(ItemID.ShroomiteBar, 12)
                 .AddTile(TileID.MythrilAnvil)
+                .AddCustomShimmerResult(ModContent.ItemType<LargePick11>())
+                .AddCustomShimmerResult(ItemID.ShroomiteBar, 12)
                 .Register();
         }
     }
@@ -456,6 +463,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePick21>();
     }
 
     public class LargePick23 : LargePickBase
@@ -468,6 +477,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePick21>();
     }
 
     public class LargePick24 : LargePickBase
@@ -480,5 +491,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePick21>();
     }
 }

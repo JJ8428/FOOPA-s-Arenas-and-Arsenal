@@ -9,8 +9,8 @@ namespace FoopaArenaArsenal.Common.Systems
     {
         public static RecipeGroup LargePickTier1;
         public static RecipeGroup LargeHammerTier1;
-        public static RecipeGroup LargeTileTier1;
-        public static RecipeGroup LargeWallTier1;
+        // public static RecipeGroup LargeTileTier1;
+        // public static RecipeGroup LargeWallTier1;
 
         public static RecipeGroup LargeWaterSponge;
         public static RecipeGroup LargeLavaSponge;
@@ -45,6 +45,7 @@ namespace FoopaArenaArsenal.Common.Systems
                 ModContent.ItemType<LargeHammer13>());
             RecipeGroup.RegisterGroup("FoopaArenaArsenal:LargeHammerTier1", LargeHammerTier1);
 
+            /*
             LargeTileTier1 = new RecipeGroup(
                 () => $"{any} {Lang.GetItemNameValue(ModContent.ItemType<LargeTile1Dev>())}",
                 ModContent.ItemType<LargeTile1Dev>(),
@@ -52,7 +53,9 @@ namespace FoopaArenaArsenal.Common.Systems
                 ModContent.ItemType<LargeTile12>(),
                 ModContent.ItemType<LargeTile13>());
             RecipeGroup.RegisterGroup("FoopaArenaArsenal:LargeTileTier1", LargeTileTier1);
+            */
 
+            /*
             LargeWallTier1 = new RecipeGroup(
                 () => $"{any} {Lang.GetItemNameValue(ModContent.ItemType<LargeWall1Dev>())}",
                 ModContent.ItemType<LargeWall1Dev>(),
@@ -60,6 +63,7 @@ namespace FoopaArenaArsenal.Common.Systems
                 ModContent.ItemType<LargeWall12>(),
                 ModContent.ItemType<LargeWall13>());
             RecipeGroup.RegisterGroup("FoopaArenaArsenal:LargeWallTier1", LargeWallTier1);
+            */
 
             LargeWaterSponge = new RecipeGroup(
                 () => $"{any} {Lang.GetItemNameValue(ModContent.ItemType<LargeWaterSpongeDev>())}",

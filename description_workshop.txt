@@ -25,7 +25,7 @@ All base tools are purchased directly from the [b]Goblin Tinkerer[/b], unlocking
 [*] [b]Another Auto-Hammer (V1 & V2):[/b] Wall-clearing hammers (V1 up to 5x5, V2 up to 7x7) that scale with your best owned hammer. Preserves 1x1 altar, heart, and orb breaking.
 [*] [b]Tile Pounder:[/b] Dedicated sloping and shaping across 1x1 to 7x7 areas. Includes natural terrain-matching presets.
 [*] [b]FAA-bricator Placers (Tile & Wall):[/b] Mass-place tiles and background walls in 1x1, 3x3, and 5x5 grids. Fully respects Block Swap and auto-paint.
-[*] [b]Swiss Army Painting Suite:[/b] Dedicated Brush, Roller, and Scraper variants (V1 & V2) with 1x1, 3x3, and 5x5 brush sizes.
+[*] [b]Swiss Painter Suite:[/b] Dedicated Brush, Roller, and Scraper variants (V1 & V2) with 1x1, 3x3, and 5x5 brush sizes.
 [*] [b]XL Buckets & Sponges:[/b] 1x1 to 5x5 liquid pouring and drainage for Water, Lava, Honey, and Shimmer. Includes the [b]XL Bottomless Omni-Bucket[/b] (all 4 liquids combined) and the [b]XL Ultra Absorbant Sponge[/b].
 [*] [b]Improved Actuation Rod:[/b] Actuate up to 7x7 areas using actuators, or toggle individual 1x1 tiles without consuming items.
 [*] [b]The Proper Design (Arena Builder):[/b] Directional arena builder (Left, Center, Right) that builds platforms and places buff stations straight from inventory. Fully compatible with infinite items like Fargo's Omni Station.

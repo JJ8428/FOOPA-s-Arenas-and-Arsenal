@@ -23,7 +23,7 @@ TOOLS & FEATIRES:
 4. Tile & Wall FAA-bricators (V1 & V2)
     - Mass-placement tools for blocks and walls across 1x1, 3x3, and 5x5 areas.
     - Full compatibility with Block Swap and auto-paint settings.
-5. Swiss Army Painting Tools (Brush, Roller, Scraper)
+5. Swiss Painter Suite (Brush, Roller, Scraper)
     - Multi-tile painting and scraping across 1x1, 3x3, and 5x5 sizes.
     - Available across V1 and V2 progression tiers.
 6. XL Bottomless Buckets & Absorbent Sponges

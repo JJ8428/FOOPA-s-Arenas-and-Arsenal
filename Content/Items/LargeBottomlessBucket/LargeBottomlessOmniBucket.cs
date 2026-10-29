@@ -15,6 +15,16 @@ namespace FoopaArenaArsenal.Content.Items
     {
         protected abstract ModItem AltChangeInto { get; }
 
+        protected virtual ModItem DecraftAs => null;
+
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
+        }
+
         public override string Texture => $"FoopaArenaArsenal/Content/Items/LargeBottomlessBucket/{ItemName}";
 
         private void ChangeMode(Player player)
@@ -220,6 +230,10 @@ namespace FoopaArenaArsenal.Content.Items
                 .AddRecipeGroup(FAARecipeSystem.LargeBottomlessHoneyBucket)
                 .AddRecipeGroup(FAARecipeSystem.LargeBottomlessShimmerBucket)
                 .AddTile(TileID.LunarCraftingStation)
+                .AddCustomShimmerResult(ModContent.ItemType<LargeBottomlessWaterBucket1>())
+                .AddCustomShimmerResult(ModContent.ItemType<LargeBottomlessLavaBucket1>())
+                .AddCustomShimmerResult(ModContent.ItemType<LargeBottomlessHoneyBucket1>())
+                .AddCustomShimmerResult(ModContent.ItemType<LargeBottomlessShimmerBucket1>())
                 .Register();
         }
     }
@@ -238,6 +252,9 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniLavaBucket2>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();  
+
     }
 
     public class LargeBottomlessOmniWaterBucket3 : LargeBottomlessOmniBucketBase
@@ -254,6 +271,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniLavaBucket3>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
         public class LargeBottomlessOmniLavaBucket1 : LargeBottomlessOmniBucketBase
@@ -270,6 +289,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniHoneyBucket1>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniLavaBucket2 : LargeBottomlessOmniBucketBase
@@ -286,6 +307,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniHoneyBucket2>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniLavaBucket3 : LargeBottomlessOmniBucketBase
@@ -302,6 +325,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniHoneyBucket3>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
         public class LargeBottomlessOmniHoneyBucket1 : LargeBottomlessOmniBucketBase
@@ -318,6 +343,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniShimmerBucket1>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniHoneyBucket2 : LargeBottomlessOmniBucketBase
@@ -334,6 +361,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniShimmerBucket2>();
+    
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniHoneyBucket3 : LargeBottomlessOmniBucketBase
@@ -350,6 +379,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniShimmerBucket3>();
+        
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
         public class LargeBottomlessOmniShimmerBucket1 : LargeBottomlessOmniBucketBase
@@ -366,6 +397,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniShimmerBucket2 : LargeBottomlessOmniBucketBase
@@ -382,6 +415,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniWaterBucket2>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 
     public class LargeBottomlessOmniShimmerBucket3 : LargeBottomlessOmniBucketBase
@@ -398,5 +433,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int Price => Item.sellPrice(0, 15, 0, 0);
 
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargeBottomlessOmniWaterBucket3>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeBottomlessOmniWaterBucket1>();
     }
 }

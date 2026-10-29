@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -32,9 +31,14 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override string Texture => $"FoopaArenaArsenal/Content/Items/LargeHammer/{ItemName}";
 
+        protected virtual ModItem DecraftAs => null;
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
         }
 
         public override void SetDefaults()
@@ -71,8 +75,8 @@ namespace FoopaArenaArsenal.Content.Items
 
             if (faaPlayer.BestHammerItem != null)
             {
-                item.hammer = Math.Max(55, faaPlayer.BestHammerItem.hammer);
-                EffectiveHammerPower = Math.Max(55, faaPlayer.BestHammerItem.hammer);
+                item.hammer = Math.Max(70, faaPlayer.BestHammerItem.hammer);
+                EffectiveHammerPower = Math.Max(70, faaPlayer.BestHammerItem.hammer);
                 item.damage = faaPlayer.BestHammerItem.damage;
                 item.knockBack = faaPlayer.BestHammerItem.knockBack;
                 item.useTime = (int)(faaPlayer.BestHammerItem.useTime * sweepPenalty * .75f);
@@ -501,7 +505,7 @@ namespace FoopaArenaArsenal.Content.Items
                 ? $"[c/64FF64:Matching:] {faaPlayer.BestHammerItem.Name} ([i:{faaPlayer.BestHammerItem.type}])"
                 : "[c/64FF64:Matching:] [c/FF6464:None - no hammer found in inventories]";
 
-            string materialsLine = ItemName[^2] == '1' ? "Materials" : "";
+            string materialsLine = ItemName[^2] == '1' ? "Materials\n" : "";
 
             tooltips.RemoveAll(line => line.Mod == "Terraria" &&
                 (line.Name == "TileBoost" || line.Name == "Material" || line.Name == "HammerPower"));
@@ -509,10 +513,10 @@ namespace FoopaArenaArsenal.Content.Items
             var itemTooltip = new TooltipLine(
                 Mod,
                 "LargeHammerInfo",
-                $"{EffectiveHammerPower}% hammer power\n" +
+                $"{(faaPlayer.BestHammerItem != null ? faaPlayer.BestHammerItem.hammer : 70)}% hammer power\n" +
                 $"+{Item.tileBoost} range" +
-                $"{materialsLine}" +
-                "\nTraits scale with the strongest hammer in your inventory, piggy bank, and safe" +
+                $"\n{materialsLine}" +
+                "Traits scale with the strongest hammer in your inventory, piggy bank, and safe" +
                 $"\n{bestHammerLine}" +
                 "\nRight Click to toggle sweep size" // +
                 // $"\nAlt + Right Click to {(KillHiddenWalls ? "disable" : "enable")} destorying hidden walls"
@@ -663,8 +667,10 @@ namespace FoopaArenaArsenal.Content.Items
         {
             CreateRecipe()
                 .AddRecipeGroup(FAARecipeSystem.LargeHammerTier1)
-                .AddIngredient(ItemID.ShroomiteBar, 5)
+                .AddIngredient(ItemID.ShroomiteBar, 12)
                 .AddTile(TileID.MythrilAnvil)
+                .AddCustomShimmerResult(ModContent.ItemType<LargeHammer11>())
+                .AddCustomShimmerResult(ItemID.ShroomiteBar, 12)
                 .Register();
         }
     }
@@ -679,6 +685,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeHammer21>();
     }
 
     public class LargeHammer23 : LargeHammerBase
@@ -691,6 +699,8 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeHammer21>();
     }
 
     public class LargeHammer24 : LargeHammerBase
@@ -703,5 +713,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int BonusRange => 12;
         protected override int Rarity => ItemRarityID.Red;
         protected override int Price => Item.sellPrice(0, 7, 50, 0);
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargeHammer21>();
     }
 }

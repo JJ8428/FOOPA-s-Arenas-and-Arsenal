@@ -958,6 +958,7 @@ namespace FoopaArenaArsenal.Content.Items
         }
     }
 
+    /*
     public class LargeTile1Dev : LargeTileBase
     {
         protected override string ItemName => "LargeTile1Dev";
@@ -973,6 +974,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int AnimationSpeedMultiplier => 5;
         protected override float PaintCoatingConsumptionChance => 0f;
     }
+    */
 
     public class LargeTile11 : LargeTileBase
     {
@@ -1022,6 +1024,7 @@ namespace FoopaArenaArsenal.Content.Items
         protected override float PaintCoatingConsumptionChance => 0f;
     }
 
+    /*
     public class LargeTile21 : LargeTileBase
     {
         protected override string ItemName => "LargeTile21";
@@ -1078,5 +1081,5 @@ namespace FoopaArenaArsenal.Content.Items
         protected override int AnimationSpeedMultiplier => 5;
         protected override float PaintCoatingConsumptionChance => .5f;
     }
-
+    */
 }

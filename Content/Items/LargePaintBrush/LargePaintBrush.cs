@@ -32,9 +32,14 @@ namespace FoopaArenaArsenal.Content.Items
 
         public override string Texture => $"FoopaArenaArsenal/Content/Items/LargePaintBrush/{ItemName}";
 
+        protected virtual ModItem DecraftAs => null;
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
         }
 
         public override void SetDefaults()
@@ -800,6 +805,8 @@ namespace FoopaArenaArsenal.Content.Items
                 .AddRecipeGroup(FAARecipeSystem.LargePaintBrushTier1)
                 .AddIngredient(ItemID.SpectreBar, 8)
                 .AddTile(TileID.MythrilAnvil)
+                .AddCustomShimmerResult(ModContent.ItemType<LargePaintBrush11>())
+                .AddCustomShimmerResult(ItemID.SpectreBar, 8)
                 .Register();
         }
     }
@@ -818,6 +825,8 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float PaintCoatingConsumptionChance => .5f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintRoller22>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintBrush22>();  
     }
 
     public class LargePaintBrush23 : LargePaintBrushBase
@@ -834,5 +843,7 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float PaintCoatingConsumptionChance => .5f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintRoller23>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintBrush21>();  
     }
 }

@@ -35,9 +35,14 @@ namespace FoopaArenaArsenal.Content.Items
         private int? scraperState1;
         private int? scraperState2;
 
+        protected virtual ModItem DecraftAs => null;
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+
+            if (DecraftAs != null)
+                ItemID.Sets.ShimmerCountsAsItem[Type] = DecraftAs.Type;
         }
 
         public override void SetDefaults()
@@ -543,6 +548,8 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float MossCollectionChance => .3333f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintBrush22>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintScraper21>();
     }
 
     public class LargePaintScraper23 : LargePaintScraperBase
@@ -559,5 +566,7 @@ namespace FoopaArenaArsenal.Content.Items
 
         protected override float MossCollectionChance => .3333f;
         protected override ModItem AltChangeInto => ModContent.GetInstance<LargePaintBrush23>();
+
+        protected override ModItem DecraftAs => ModContent.GetInstance<LargePaintScraper21>();
     }
 }

@@ -7,9 +7,11 @@ namespace FoopaArenaArsenal.Common.Globals
 {
     public class FAAShops : GlobalNPC
     {
+        /*
         private static readonly Condition FiveAnglerQuests = new Condition(
             "Mods.FoopaArenaArsenal.Conditions.FiveAnglerQuests",
             () => Main.LocalPlayer.anglerQuestsFinished >= 5);
+        */
 
         public override void ModifyShop(NPCShop shop)
         {
@@ -25,9 +27,11 @@ namespace FoopaArenaArsenal.Common.Globals
             shop.Add<SlopeTool11>();
 
             shop.Add<LargeActuationRod11>(Condition.DownedSkeletron);
-
-            shop.Add<LargeBottomlessWaterBucket1>(FiveAnglerQuests);
-            shop.Add<LargeWaterSponge1>(FiveAnglerQuests);
+                
+            shop.Add<LargeBottomlessWaterBucket1>();
+            shop.Add<LargeWaterSponge1>();
+            // shop.Add<LargeBottomlessWaterBucket1>(FiveAnglerQuests);
+            // shop.Add<LargeWaterSponge1>(FiveAnglerQuests);
 
             shop.Add<LargeBottomlessLavaBucket1>(Condition.Hardmode);
             shop.Add<LargeLavaSponge1>(Condition.Hardmode);
