@@ -1,81 +1,81 @@
 Items: {
 	LargePick1dev: {
-		DisplayName: Automatic Auto-Mattock V1
+		DisplayName: Automatic Auto-Mattock MK1
 		Tooltip: ""
 	}
 
 	LargePick11: {
-		DisplayName: Automatic Auto-Mattock V1 (1x1)
+		DisplayName: Automatic Auto-Mattock MK1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePick12: {
-		DisplayName: Automatic Auto-Mattock V1 (3x3)
+		DisplayName: Automatic Auto-Mattock MK1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePick13: {
-		DisplayName: Automatic Auto-Mattock V1 (5x5)
+		DisplayName: Automatic Auto-Mattock MK1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePick21: {
-		DisplayName: Automatic Auto-Mattock V2 (1x1)
+		DisplayName: Automatic Auto-Mattock MK2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePick22: {
-		DisplayName: Automatic Auto-Mattock V2 (3x3)
+		DisplayName: Automatic Auto-Mattock MK2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePick23: {
-		DisplayName: Automatic Auto-Mattock V2 (5x5)
+		DisplayName: Automatic Auto-Mattock MK2 (5x5)
 		Tooltip: ""
 	}
 
 	LargePick24: {
-		DisplayName: Automatic Auto-Mattock V2 (7x7)
+		DisplayName: Automatic Auto-Mattock MK2 (7x7)
 		Tooltip: ""
 	}
 
 	LargeHammer1dev: {
-		DisplayName: Another Auto-Hammer V1
+		DisplayName: Another Auto-Hammer MK1
 		Tooltip: ""
 	}
 
 	LargeHammer11: {
-		DisplayName: Another Auto-Hammer V1 (1x1)
+		DisplayName: Another Auto-Hammer MK1 (1x1)
 		Tooltip: ""
 	}
 
 	LargeHammer12: {
-		DisplayName: Another Auto-Hammer V1 (3x3)
+		DisplayName: Another Auto-Hammer MK1 (3x3)
 		Tooltip: ""
 	}
 
 	LargeHammer13: {
-		DisplayName: Another Auto-Hammer V1 (5x5)
+		DisplayName: Another Auto-Hammer MK1 (5x5)
 		Tooltip: ""
 	}
 
 	LargeHammer21: {
-		DisplayName: Another Auto-Hammer V2 (1x1)
+		DisplayName: Another Auto-Hammer MK2 (1x1)
 		Tooltip: ""
 	}
 
 	LargeHammer22: {
-		DisplayName: Another Auto-Hammer V2 (3x3)
+		DisplayName: Another Auto-Hammer MK2 (3x3)
 		Tooltip: ""
 	}
 
 	LargeHammer23: {
-		DisplayName: Another Auto-Hammer V2 (5x5)
+		DisplayName: Another Auto-Hammer MK2 (5x5)
 		Tooltip: ""
 	}
 
 	LargeHammer24: {
-		DisplayName: Another Auto-Hammer V2 (7x7)
+		DisplayName: Another Auto-Hammer MK2 (7x7)
 		Tooltip: ""
 	}
 
@@ -385,12 +385,12 @@ Items: {
 	}
 
 	LargePick1Dev: {
-		DisplayName: Automatic Auto-Mattock V1
+		DisplayName: Automatic Auto-Mattock MK1
 		Tooltip: ""
 	}
 
 	LargeHammer1Dev: {
-		DisplayName: Another Auto-Hammer V1
+		DisplayName: Another Auto-Hammer MK1
 		Tooltip: ""
 	}
 
@@ -410,107 +410,107 @@ Items: {
 	}
 
 	LargePaintScraper1Dev: {
-		DisplayName: Swiss Painter Scraper V1
+		DisplayName: Swiss Painter Scraper MK1
 		Tooltip: ""
 	}
 
 	LargePaintScraper11: {
-		DisplayName: Swiss Painter Scraper V1 (1x1)
+		DisplayName: Swiss Painter Scraper MK1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintScraper12: {
-		DisplayName: Swiss Painter Scraper V1 (3x3)
+		DisplayName: Swiss Painter Scraper MK1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintScraper13: {
-		DisplayName: Swiss Painter Scraper V1 (5x5)
+		DisplayName: Swiss Painter Scraper MK1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintScraper21: {
-		DisplayName: Swiss Painter Scraper V2 (1x1)
+		DisplayName: Swiss Painter Scraper MK2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintScraper22: {
-		DisplayName: Swiss Painter Scraper V2 (3x3)
+		DisplayName: Swiss Painter Scraper MK2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintScraper23: {
-		DisplayName: Swiss Painter Scraper V2 (5x5)
+		DisplayName: Swiss Painter Scraper MK2 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintBrush1Dev: {
-		DisplayName: Swiss Painter Brush V1
+		DisplayName: Swiss Painter Brush MK1
 		Tooltip: ""
 	}
 
 	LargePaintBrush11: {
-		DisplayName: Swiss Painter Brush V1 (1x1)
+		DisplayName: Swiss Painter Brush MK1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintBrush12: {
-		DisplayName: Swiss Painter Brush V1 (3x3)
+		DisplayName: Swiss Painter Brush MK1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintBrush13: {
-		DisplayName: Swiss Painter Brush V1 (5x5)
+		DisplayName: Swiss Painter Brush MK1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintBrush21: {
-		DisplayName: Swiss Painter Brush V2 (1x1)
+		DisplayName: Swiss Painter Brush MK2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintBrush22: {
-		DisplayName: Swiss Painter Brush V2 (3x3)
+		DisplayName: Swiss Painter Brush MK2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintBrush23: {
-		DisplayName: Swiss Painter Brush V2 (5x5)
+		DisplayName: Swiss Painter Brush MK2 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintRoller1Dev: {
-		DisplayName: Swiss Painter Roller V1
+		DisplayName: Swiss Painter Roller MK1
 		Tooltip: ""
 	}
 
 	LargePaintRoller11: {
-		DisplayName: Swiss Painter Roller V1 (1x1)
+		DisplayName: Swiss Painter Roller MK1 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintRoller12: {
-		DisplayName: Swiss Painter Roller V1 (3x3)
+		DisplayName: Swiss Painter Roller MK1 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintRoller13: {
-		DisplayName: Swiss Painter Roller V1 (5x5)
+		DisplayName: Swiss Painter Roller MK1 (5x5)
 		Tooltip: ""
 	}
 
 	LargePaintRoller21: {
-		DisplayName: Swiss Painter Roller V2 (1x1)
+		DisplayName: Swiss Painter Roller MK2 (1x1)
 		Tooltip: ""
 	}
 
 	LargePaintRoller22: {
-		DisplayName: Swiss Painter Roller V2 (3x3)
+		DisplayName: Swiss Painter Roller MK2 (3x3)
 		Tooltip: ""
 	}
 
 	LargePaintRoller23: {
-		DisplayName: Swiss Painter Roller V2 (5x5)
+		DisplayName: Swiss Painter Roller MK2 (5x5)
 		Tooltip: ""
 	}
 }

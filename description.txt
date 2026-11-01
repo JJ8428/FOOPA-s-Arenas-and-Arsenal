@@ -1,31 +1,30 @@
-------- FOOPA's Arenas and Arsenal -------
-by FOOPA_luvr
+------- LOOFA's Arenas and Arsenal -------
+by LOOFA_luvr
 
-There are plenty of mods that add tools that assist in tasks like mining, painting, placing blocks/walls, and building arenas.
-However, these mods never do it in a way that I consider balanced.
+There are plenty of mods that add tools that assist in tasks like mining, painting, placing blocks/walls, and building arenas. However, these mods never do it in a way that I consider balanced.
 
 This mod adds a variety of tools inspired by the Rubblemaker to address those exact tasks, whilst remaining (in my view at least) balanced and vanilla-esque.
 
 TOOLS & FEATIRES:
 
-1. Automatic Auto-Mattock (V1 & V2)
-    - Toggleable area mining pickaxes: V1 (up to 5x5) and V2 (up to 7x7).
+1. Automatic Auto-Mattock (MK1 & MK2)
+    - Toggleable area mining pickaxes: MK1 (up to 5x5) and MK2 (up to 7x7).
     - Speed dynamically normalizes per brush size to prevent broken mining rates.
     - Pickaxe power matches the highest-tier pickaxe found in your Inventory, Piggy Bank, or Safe.
     - Able to mine evil stone to streamline underground boss arena prep on FTW and difficult mods.
-2. Another Auto-Hammer (V1 & V2)
-    - Multi-tile wall-clearing hammers: V1 (up to 5x5) and V2 (up to 7x7).
+2. Another Auto-Hammer (MK1 & MK2)
+    - Multi-tile wall-clearing hammers: MK1 (up to 5x5) and MK2 (up to 7x7).
     - Power scales with your best inventory/piggy bank/safe hammer.
     - 1x1 mode safely retains the ability to smash Demon Altars, Shadow Orbs, and Crimson Hearts. Sloping behavior moved to dedicated tools.
 3. Tile Pounder
     - Multi-block sloper and terrain shaper (1x1 to 7x7).
     - Cycles slopes with dedicated presets that mirror natural world-generation curves.
-4. Tile & Wall FAA-bricators (V1 & V2)
+4. Tile FAA-bricator & Wall FAA-bricator
     - Mass-placement tools for blocks and walls across 1x1, 3x3, and 5x5 areas.
     - Full compatibility with Block Swap and auto-paint settings.
-5. Swiss Painter Suite (Brush, Roller, Scraper)
+5. Swiss Painter Brush / Roller / Scraper (MK1 & MK2)
     - Multi-tile painting and scraping across 1x1, 3x3, and 5x5 sizes.
-    - Available across V1 and V2 progression tiers.
+    - Available across MK1 and MK2 progression tiers.
 6. XL Bottomless Buckets & Absorbent Sponges
     - Area placement and liquid drainage in 1x1, 3x3, and 5x5 sweeps.
     - Available for Water, Lava, Honey, and Shimmer.
@@ -33,21 +32,21 @@ TOOLS & FEATIRES:
 7. Improved Actuation Rod
     - Actuate blocks across 1x1, 3x3, 5x5, and 7x7 areas using actuators.
     - Secondary 1x1 mode allows actuator-free toggling.
-8. The Proper Design (Arena Builder)
+8. The Proper Design
     - Rapidly builds arena scaffoldings and platforms (Left, Center, and Right variants).
     - Places nearby buff stations and furniture directly from your inventory.
-    - Preserves infinite and non-consumable modded stations (e.g., Fargo's Omni Station).
+    - Compatible with modded buff stations (e.g., Fargo's Omni Station) as well.
 
 HOW TO OBTAIN:
+
 All base tools are sold directly by the Goblin Tinkerer as your world progresses:
-    - Available Immediately: Automatic Auto-Mattock V1, Another Auto-Hammer V1, Swiss Army Brush V1, Tile FAA-bricator V1, Wall FAA-bricator V1, Tile Pounder, and The Proper Design.
+    - Available Immediately: Automatic Auto-Mattock MK1, XL Bottomless Water Bucket & XL Super Absorbent Sponge, Another Auto-Hammer MK1, Swiss Army Brush MK1, Tile FAA-bricator MK1, Wall FAA-bricator MK1, Tile Pounder, and The Proper Design.
     - Post-Skeletron: Improved Actuation Rod.
-    - 5 Angler Quests: XL Bottomless Water Bucket & XL Super Absorbent Sponge.
     - Post-Queen Bee: XL Bottomless Honey Bucket & XL Honey Absorbent Sponge.
     - Hardmode: XL Bottomless Lava Bucket & XL Lava Absorbent Sponge.
     - Post-Moon Lord: XL Bottomless Shimmer Bucket.
-    - Higher tiers (V2 variants, Omni-Bucket, Ultra Sponge) can be upgraded and crafted as you progress.
+    - Higher tiers (MK2 variants, Omni-Bucket, Ultra Sponge) can be upgraded and crafted as you progress.
 
 I have spent an unhealthy amoutn of time coding these items to have visual preview projections, Smart Cursor support, multiplayer synchronization, and world protection checks.
 
-I do have plans to comeback and add small tweaks to a few items cursors or reworking a few features, but I just need to get a v1.0 release so I can move on to other things in my life.
+I do have plans to comeback and add small tweaks to a few items cursors or reworking a few features, but I just need to get a v1.0 released so I can move on with my life.
